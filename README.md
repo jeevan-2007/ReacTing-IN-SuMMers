@@ -23,6 +23,8 @@ This repo is my personal learning space — built to:
 | **Feedback Collector App** | Users submit feedback (Good/Bad/Neutral) and view real-time stats. | Forms, `useState`, Props, Event Handling |
 | *(More coming soon)* | Each new project will be added here with its own folder and README. | |
 
+| Project Name | Description | Key Concepts |
+|--------------|-------------|--------------|
 ---
 
 ## 🛠 Technologies Used

@@ -1,0 +1,522 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', monospace;
+  background: 
+    radial-gradient(circle at 25% 25%, #69FF69 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, #FF69B4 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated background particles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, #69FF69, transparent),
+    radial-gradient(2px 2px at 40% 70%, #FF69B4, transparent),
+    radial-gradient(1px 1px at 90% 40%, #69FF69, transparent),
+    radial-gradient(1px 1px at 50% 50%, #FF69B4, transparent);
+  background-size: 200px 200px;
+  animation: sparkle 4s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+}
+
+.github-profile-container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 35px;
+  background: linear-gradient(145deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
+  border-radius: 25px;
+  box-shadow: 
+    0 0 50px rgba(105, 255, 105, 0.3),
+    0 0 100px rgba(255, 105, 180, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  animation: containerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes containerGlow {
+  0% { 
+    box-shadow: 
+      0 0 50px rgba(105, 255, 105, 0.3),
+      0 0 100px rgba(255, 105, 180, 0.2); 
+  }
+  100% { 
+    box-shadow: 
+      0 0 70px rgba(105, 255, 105, 0.5),
+      0 0 120px rgba(255, 105, 180, 0.4); 
+  }
+}
+
+/* Gaming-style border effect */
+.github-profile-container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #69FF69, #FF69B4, #69FF69, #FF69B4);
+  border-radius: 27px;
+  z-index: -1;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.input-wrapper input {
+  flex: 1;
+  min-width: 280px;
+  padding: 18px 25px;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Orbitron', monospace;
+  color: #fff;
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  box-shadow: 
+    inset 5px 5px 10px rgba(0, 0, 0, 0.3),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border: 3px solid #69FF69;
+  box-shadow: 
+    0 0 20px rgba(105, 255, 105, 0.5),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(105, 255, 105, 0.8);
+}
+
+.input-wrapper input::placeholder {
+  color: #8899a6;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-wrapper button {
+  padding: 18px 35px;
+  background: linear-gradient(145deg, #69FF69, #FF69B4);
+  color: #000;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 900;
+  font-family: 'Orbitron', monospace;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 
+    0 8px 20px rgba(105, 255, 105, 0.4),
+    0 4px 10px rgba(255, 105, 180, 0.3);
+}
+
+.input-wrapper button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 15px 35px rgba(105, 255, 105, 0.6),
+    0 8px 20px rgba(255, 105, 180, 0.5);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.input-wrapper button:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Gaming button effect */
+.input-wrapper button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.input-wrapper button:hover::before {
+  left: 100%;
+}
+
+/* User Profile Card - Gaming Style */
+.User {
+  background: linear-gradient(145deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  position: relative;
+  animation: profilePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes profilePulse {
+  0% { 
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.5),
+      0 0 30px rgba(105, 255, 105, 0.3); 
+  }
+  100% { 
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.6),
+      0 0 50px rgba(255, 105, 180, 0.4); 
+  }
+}
+
+.User::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #69FF69, #FF69B4);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid #69FF69;
+  margin-bottom: 25px;
+  transition: all 0.4s ease;
+  box-shadow: 
+    0 0 30px rgba(105, 255, 105, 0.6),
+    0 0 60px rgba(255, 105, 180, 0.3);
+  position: relative;
+}
+
+.avatar:hover {
+  transform: scale(1.1) rotate(360deg);
+  border-color: #FF69B4;
+  box-shadow: 
+    0 0 50px rgba(255, 105, 180, 0.8),
+    0 0 80px rgba(105, 255, 105, 0.5);
+}
+
+/* Gaming avatar ring effect */
+.avatar::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #69FF69, #FF69B4, #69FF69);
+  background-clip: border-box;
+  animation: avatarRing 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes avatarRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.username {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 25px;
+  padding: 15px 30px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #69FF69, #FF69B4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(105, 255, 105, 0.5);
+  position: relative;
+}
+
+.username:hover {
+  transform: translateY(-5px) scale(1.05);
+  text-shadow: 
+    0 0 30px rgba(105, 255, 105, 0.8),
+    0 0 60px rgba(255, 105, 180, 0.6);
+}
+
+.username::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #69FF69, #FF69B4);
+  transition: width 0.3s ease;
+}
+
+.username:hover::after {
+  width: 100%;
+}
+
+.followers,
+.following {
+  display: inline-block;
+  margin: 15px 25px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  padding: 12px 20px;
+  background: linear-gradient(145deg, rgba(105, 255, 105, 0.2), rgba(255, 105, 180, 0.2));
+  border-radius: 25px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.followers::before,
+.following::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #69FF69, #FF69B4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.followers:hover,
+.following:hover {
+  transform: translateY(-5px) scale(1.1);
+  border: 2px solid #69FF69;
+  box-shadow: 
+    0 10px 25px rgba(105, 255, 105, 0.5),
+    0 5px 15px rgba(255, 105, 180, 0.3);
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.followers:hover::before,
+.following:hover::before {
+  opacity: 0.3;
+}
+
+/* Loading State - Gaming Style */
+.loading-message {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: 'Orbitron', monospace;
+  color: #69FF69;
+  padding: 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: loadingGlow 1s ease-in-out infinite alternate;
+  position: relative;
+}
+
+@keyframes loadingGlow {
+  0% { 
+    color: #69FF69;
+    text-shadow: 0 0 20px rgba(105, 255, 105, 0.8);
+  }
+  100% { 
+    color: #FF69B4;
+    text-shadow: 0 0 30px rgba(255, 105, 180, 1);
+  }
+}
+
+.loading-message::after {
+  content: '...';
+  animation: loadingDots 1.5s steps(4, end) infinite;
+}
+
+@keyframes loadingDots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* No Profile Found - Gaming Style */
+.no-profile-message {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Orbitron', monospace;
+  color: #FF69B4;
+  padding: 40px;
+  background: linear-gradient(145deg, rgba(255, 105, 180, 0.1), rgba(105, 255, 105, 0.1));
+  border-radius: 15px;
+  border: 2px solid #FF69B4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 
+    0 0 30px rgba(255, 105, 180, 0.3),
+    inset 0 0 20px rgba(255, 105, 180, 0.1);
+  animation: errorPulse 2s ease-in-out infinite;
+}
+
+@keyframes errorPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Fallback styles */
+.github-profile-container > div:not(.input-wrapper):not(.User):not(.loading-message):not(.no-profile-message) {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Orbitron', monospace;
+  padding: 40px;
+  border-radius: 15px;
+  color: #69FF69;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Responsive Design - Gaming Theme */
+@media (max-width: 768px) {
+  .github-profile-container {
+    margin: 10px;
+    padding: 25px;
+  }
+  
+  .input-wrapper {
+    flex-direction: column;
+  }
+  
+  .input-wrapper input {
+    min-width: 100%;
+  }
+  
+  .User {
+    padding: 25px;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .username {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+  
+  .followers,
+  .following {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .github-profile-container {
+    padding: 20px;
+  }
+  
+  .input-wrapper input,
+  .input-wrapper button {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+  
+  .User {
+    padding: 20px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .username {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Enhanced focus states for gaming theme */
+button:focus,
+input:focus {
+  outline: 3px solid #69FF69;
+  outline-offset: 3px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print styles - Gaming theme */
+@media print {
+  body {
+    background: #000;
+    color: #69FF69;
+  }
+  
+  .github-profile-container {
+    box-shadow: none;
+    border: 2px solid #69FF69;
+  }
+  
+  .input-wrapper {
+    display: none;
+  }
+}

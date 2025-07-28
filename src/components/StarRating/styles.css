@@ -1,0 +1,15 @@
+.star-rating {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center (if height is set) */
+    margin-top: 2rem;
+    gap: 10px;               /* spacing between stars (optional) */
+}
+
+.active {
+    color: yellow;
+}
+
+.inactive {
+    color: black;
+}

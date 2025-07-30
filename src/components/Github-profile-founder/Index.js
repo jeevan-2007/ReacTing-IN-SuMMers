@@ -22,7 +22,7 @@ function GithubProfileFinder() {
         const response = await fetch(`https://api.github.com/users/${userName}`);
         const data = await response.json();
         console.log(data);
-        if (data) {
+        if (data) { 
             setProfileData(data);
             setLoading(false);
             setUsername("");

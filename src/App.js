@@ -12,6 +12,7 @@ import ScrollIndicator from './components/Scroll Indicator/index.jsx'
 import TabTest from './components/CustomTabs/TabTest.jsx'
 import ModalTest from './components/custom-modal-popup/ModalTest.jsx'
 import GithubProfileFinder from './components/Github-profile-founder/Index.js'
+import SearchAtocompleteWithApi from './components/search-auto-complete/index.js'
 function App() {
   const h2design = {
     textAlign: 'center',
@@ -60,7 +61,7 @@ function App() {
       }}>
         Projects
       </h1>
-
+{/* 
        
       <div style={sectionStyle}>
         <h2 style={h2design}>Tree view</h2>
@@ -91,6 +92,10 @@ function App() {
         <div style={sectionStyle}>
         <h2 style={h2design}>Github Profile Finder</h2>
         <GithubProfileFinder/>
+      </div> */}
+      <div style={sectionStyle}>
+        <h2 style={h2design}>Search Autocomplete Api</h2>
+        <SearchAtocompleteWithApi/>
       </div>
     </div>
   )
